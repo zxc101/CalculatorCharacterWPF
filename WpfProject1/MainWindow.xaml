@@ -1,0 +1,831 @@
+﻿<Window x:Class="WpfProject1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfProject1"
+        mc:Ignorable="d"
+        Title="Калькулятор персонажей" Height="680" Width="1590">
+    <Grid RenderTransformOrigin="0.494,0.5">
+        <!--Columns-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="15*"/>
+            
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+
+
+            <ColumnDefinition Width="15*"/>
+            
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            
+            <ColumnDefinition Width="15*"/>
+            
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            
+            <ColumnDefinition Width="15*"/>
+            
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            
+            <ColumnDefinition Width="15*"/>
+            
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            
+            <ColumnDefinition Width="15*"/>
+            
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+        </Grid.ColumnDefinitions>
+
+        <!--Rows-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="13*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="13*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+
+        <!--Hero-->
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="2" Grid.Column="0" Text="Атака">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="3" Grid.Column="0" Text="Жизнь">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="4" Grid.Column="0" Text="Крит">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="6" Grid.Column="0" Text="%"/>
+
+        <Rectangle Fill="Blue" Width="auto" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="5"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5">Герой</TextBlock>
+        <TextBox Margin="10,0,10,0" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="5" Name="herosAttack"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="5" Name="herosAttackIsNotNumber" Foreground="Red" Visibility="Hidden">Не целое число</TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="5" Name="herosAttackLessZero" Foreground="Red" Visibility="Hidden">Меньше 0</TextBlock>
+        <TextBox Margin="10,0,10,0" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="5" Name="herosLife"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="5" Name="herosLifeIsNotNumber" Foreground="Red" Visibility="Hidden">Не целое число</TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="5" Name="herosLifeLessZero" Foreground="Red" Visibility="Hidden">Меньше 0</TextBlock>
+        <TextBox Margin="10,0,10,0" VerticalAlignment="Center" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="5" Name="herosCriticalAttack"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="5" Name="herosCriticalAttackIsNotNumber" Foreground="Red" Visibility="Hidden">Не целое число</TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="5" Name="herosCriticalAttackLessZero" Foreground="Red" Visibility="Hidden">Меньше 0</TextBlock>
+
+        <!--AttackPercent-->
+        <TextBox Margin="1,0,1,0" VerticalAlignment="Center" Grid.Row="6" Grid.Column="2" Name="herosAttackPercent"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="2" Text="Атака">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="2" Visibility="Hidden" Foreground="Red" Text="Не целое число" Name="herosAttackPercentIsNotNumber">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="2" Visibility="Hidden" Foreground="Red" Text="Меньше 1" Name="herosAttackPercentLessOne">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="2" Visibility="Hidden" Foreground="Red" Text="Больше 100" Name="herosAttackPercentMoreOneHundred">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <!--CriticalAttackPercent-->
+        <TextBox Margin="1,0,1,0" VerticalAlignment="Center" Grid.Row="6" Grid.Column="3"  Name="herosCriticalAttackPercent"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="3" Text="Крит">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="3" Visibility="Hidden" Foreground="Red" Text="Не целое число" Name="herosCriticalAttackPercentIsNotNumber">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="3" Visibility="Hidden" Foreground="Red" Text="Меньше 1" Name="herosCriticalAttackPercentLessOne">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="3" Visibility="Hidden" Foreground="Red" Text="Больше 100" Name="herosCriticalAttackPercentMoreOneHundred">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <!--DodgePercent-->
+        <TextBox Margin="1,0,1,0" VerticalAlignment="Center" Grid.Row="6" Grid.Column="4" Name="herosDodgePercent"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="4" Text="Уворот">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="4" Visibility="Hidden" Foreground="Red" Text="Не целое число" Name="herosDodgePercentIsNotNumber">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="4" Visibility="Hidden" Foreground="Red" Text="Меньше 0" Name="herosDodgePercentLessZero">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="4" Visibility="Hidden" Foreground="Red" Text="Больше 99" Name="herosDodgePercentMoreNinetyNine">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <!--vs-->
+        <Button Margin="0, 10, 0, 10" Grid.Row="3" Grid.Column="6" Grid.ColumnSpan="3" Click="Fight" Name="VSButton"/>
+
+        <!--CountAttack-->
+        <TextBox VerticalAlignment="Center" Grid.Row="5" Grid.Column="7" Name="countMatches"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="6" Grid.Column="7" Grid.RowSpan="2" Text="Количество матчей">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="6" Grid.Column="7" Grid.RowSpan="2" Visibility="Hidden" Foreground="Red" Text="Не целое число" Name="countMatchesIsNotNumber">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="6" Grid.Column="7" Grid.RowSpan="2" Visibility="Hidden" Foreground="Red" Text="Меньше 1" Name="countMatchesLessOne">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <!--Enemy 1-->
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="2" Grid.Column="9" Text="Атака">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="3" Grid.Column="9" Text="Жизнь">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="4" Grid.Column="9" Text="Крит">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="6" Grid.Column="9" Text="%"/>
+        
+        <Rectangle Fill="Red" Width="auto" Grid.Row="0" Grid.Column="10" Grid.ColumnSpan="5"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="1" Grid.Column="10" Grid.ColumnSpan="5">Враг 1</TextBlock>
+        <TextBox Margin="10,0,10,0" VerticalAlignment="Center" Grid.Row="2" Grid.Column="10" Grid.ColumnSpan="5" Name="enemys1Attack"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="2" Grid.Column="10" Grid.ColumnSpan="5" Name="enemys1AttackIsNotNumber" Foreground="Red" Visibility="Hidden">Не целое число</TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="2" Grid.Column="10" Grid.ColumnSpan="5" Name="enemys1AttackLessZero" Foreground="Red" Visibility="Hidden">Меньше 0</TextBlock>
+        <TextBox Margin="10,0,10,0" VerticalAlignment="Center" Grid.Row="3" Grid.Column="10" Grid.ColumnSpan="5" Name="enemys1Life"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="3" Grid.Column="10" Grid.ColumnSpan="5" Name="enemys1LifeIsNotNumber" Foreground="Red" Visibility="Hidden">Не целое число</TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="3" Grid.Column="10" Grid.ColumnSpan="5" Name="enemys1LifeLessZero" Foreground="Red" Visibility="Hidden">Меньше 0</TextBlock>
+        <TextBox Margin="10,0,10,0" VerticalAlignment="Center" Grid.Row="4" Grid.Column="10" Grid.ColumnSpan="5" Name="enemys1CriticalAttack"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="4" Grid.Column="10" Grid.ColumnSpan="5" Name="enemys1CriticalAttackIsNotNumber" Foreground="Red" Visibility="Hidden">Не целое число</TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="4" Grid.Column="10" Grid.ColumnSpan="5" Name="enemys1CriticalAttackLessZero" Foreground="Red" Visibility="Hidden">Меньше 0</TextBlock>
+
+        <!--AttackPercent-->
+        <TextBox Margin="1,0,1,0" VerticalAlignment="Center" Grid.Row="6" Grid.Column="11" Name="enemys1AttackPercent"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="11" Text="Атака">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="11" Visibility="Hidden" Foreground="Red" Text="Не целое число" Name="enemys1AttackPercentIsNotNumber">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="11" Visibility="Hidden" Foreground="Red" Text="Меньше 1" Name="enemys1AttackPercentLessOne">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="11" Visibility="Hidden" Foreground="Red" Text="Больше 100" Name="enemys1AttackPercentMoreOneHundred">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <!--CriticalAttackPercent-->
+        <TextBox Margin="1,0,1,0" VerticalAlignment="Center" Grid.Row="6" Grid.Column="12" Name="enemys1CriticalAttackPercent"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="12" Text="Крит">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="12" Visibility="Hidden" Foreground="Red" Text="Не целое число" Name="enemys1CriticalAttackPercentIsNotNumber">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="12" Visibility="Hidden" Foreground="Red" Text="Меньше 1" Name="enemys1CriticalAttackPercentLessOne">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="12" Visibility="Hidden" Foreground="Red" Text="Больше 100" Name="enemys1CriticalAttackPercentMoreOneHundred">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <!--DodgePercen-->
+        <TextBox Margin="1,0,1,0" VerticalAlignment="Center" Grid.Row="6" Grid.Column="13" Name="enemys1DodgePercent"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="13" Text="Уворот">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="13" Visibility="Hidden" Foreground="Red" Text="Не целое число" Name="enemys1DodgePercentIsNotNumber">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="13" Visibility="Hidden" Foreground="Red" Text="Меньше 0" Name="enemys1DodgePercentLessZero">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="13" Visibility="Hidden" Foreground="Red" Text="Больше 99" Name="enemys1DodgePercentMoreNinetyNine">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <!--Enemy 2-->
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="2" Grid.Column="16" Text="Атака">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="3" Grid.Column="16" Text="Жизнь">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="4" Grid.Column="16" Text="Крит">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="6" Grid.Column="16" Text="%"/>
+        
+        <Rectangle Fill="Red" Width="auto" Grid.Row="0" Grid.Column="17" Grid.ColumnSpan="5"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="1" Grid.Column="17" Grid.ColumnSpan="5">Враг 2</TextBlock>
+        <TextBox Margin="10,0,10,0" VerticalAlignment="Center" Grid.Row="2" Grid.Column="17" Grid.ColumnSpan="5" Name="enemys2Attack"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="2" Grid.Column="17" Grid.ColumnSpan="5" Name="enemys2AttackIsNotNumber" Foreground="Red" Visibility="Hidden">Не целое число</TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="2" Grid.Column="17" Grid.ColumnSpan="5" Name="enemys2AttackLessZero" Foreground="Red" Visibility="Hidden">Меньше 0</TextBlock>
+        <TextBox Margin="10,0,10,0" VerticalAlignment="Center" Grid.Row="3" Grid.Column="17" Grid.ColumnSpan="5" Name="enemys2Life"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="3" Grid.Column="17" Grid.ColumnSpan="5" Name="enemys2LifeIsNotNumber" Foreground="Red" Visibility="Hidden">Не целое число</TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="3" Grid.Column="17" Grid.ColumnSpan="5" Name="enemys2LifeLessZero" Foreground="Red" Visibility="Hidden">Меньше 0</TextBlock>
+        <TextBox Margin="10,0,10,0" VerticalAlignment="Center" Grid.Row="4" Grid.Column="17" Grid.ColumnSpan="5" Name="enemys2CriticalAttack"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="4" Grid.Column="17" Grid.ColumnSpan="5" Name="enemys2CriticalAttackIsNotNumber" Foreground="Red" Visibility="Hidden">Не целое число</TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="4" Grid.Column="17" Grid.ColumnSpan="5" Name="enemys2CriticalAttackLessZero" Foreground="Red" Visibility="Hidden">Меньше 0</TextBlock>
+
+        <!--AttackPercent-->
+        <TextBox Margin="1,0,1,0" VerticalAlignment="Center" Grid.Row="6" Grid.Column="18" Name="enemys2AttackPercent"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="18" Text="Атака">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="18" Visibility="Hidden" Foreground="Red" Text="Не целое число" Name="enemys2AttackPercentIsNotNumber">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="18" Visibility="Hidden" Foreground="Red" Text="Меньше 1" Name="enemys2AttackPercentLessOne">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="18" Visibility="Hidden" Foreground="Red" Text="Больше 100" Name="enemys2AttackPercentMoreOneHundred">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <!--CriticalAttackPercent-->
+        <TextBox Margin="1,0,1,0" VerticalAlignment="Center" Grid.Row="6" Grid.Column="19" Name="enemys2CriticalAttackPercent"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="19" Text="Крит">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="19" Visibility="Hidden" Foreground="Red" Text="Не целое число" Name="enemys2CriticalAttackPercentIsNotNumber">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="19" Visibility="Hidden" Foreground="Red" Text="Меньше 1" Name="enemys2CriticalAttackPercentLessOne">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="19" Visibility="Hidden" Foreground="Red" Text="Больше 100" Name="enemys2CriticalAttackPercentMoreOneHundred">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <!--DodgePercen-->
+        <TextBox Margin="1,0,1,0" VerticalAlignment="Center" Grid.Row="6" Grid.Column="20" Name="enemys2DodgePercent"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="20" Text="Уворот">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="20" Visibility="Hidden" Foreground="Red" Text="Не целое число" Name="enemys2DodgePercentIsNotNumber">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="20" Visibility="Hidden" Foreground="Red" Text="Меньше 0" Name="enemys2DodgePercentLessZero">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="20" Visibility="Hidden" Foreground="Red" Text="Больше 99" Name="enemys2DodgePercentMoreNinetyNine">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <!--Enemy 3-->
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="2" Grid.Column="23" Text="Атака">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="3" Grid.Column="23" Text="Жизнь">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="4" Grid.Column="23" Text="Крит">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="6" Grid.Column="23" Text="%"/>
+        
+        <Rectangle Fill="Red" Width="auto" Grid.Row="0" Grid.Column="24" Grid.ColumnSpan="5"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="1" Grid.Column="24" Grid.ColumnSpan="5">Враг 3</TextBlock>
+        <TextBox Margin="10,0,10,0" VerticalAlignment="Center" Grid.Row="2" Grid.Column="24" Grid.ColumnSpan="5" Name="enemys3Attack"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="2" Grid.Column="24" Grid.ColumnSpan="5" Name="enemys3AttackIsNotNumber" Foreground="Red" Visibility="Hidden">Не целое число</TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="2" Grid.Column="24" Grid.ColumnSpan="5" Name="enemys3AttackLessZero" Foreground="Red" Visibility="Hidden">Меньше 0</TextBlock>
+        <TextBox Margin="10,0,10,0" VerticalAlignment="Center" Grid.Row="3" Grid.Column="24" Grid.ColumnSpan="5" Name="enemys3Life"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="3" Grid.Column="24" Grid.ColumnSpan="5" Name="enemys3LifeIsNotNumber" Foreground="Red" Visibility="Hidden">Не целое число</TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="3" Grid.Column="24" Grid.ColumnSpan="5" Name="enemys3LifeLessZero" Foreground="Red" Visibility="Hidden">Меньше 0</TextBlock>
+        <TextBox Margin="10,0,10,0" VerticalAlignment="Center" Grid.Row="4" Grid.Column="24" Grid.ColumnSpan="5" Name="enemys3CriticalAttack"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="4" Grid.Column="24" Grid.ColumnSpan="5" Name="enemys3CriticalAttackIsNotNumber" Foreground="Red" Visibility="Hidden">Не целое число</TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="4" Grid.Column="24" Grid.ColumnSpan="5" Name="enemys3CriticalAttackLessZero" Foreground="Red" Visibility="Hidden">Меньше 0</TextBlock>
+
+        <!--AttackPercent-->
+        <TextBox Margin="1,0,1,0" VerticalAlignment="Center" Grid.Row="6" Grid.Column="25" Name="enemys3AttackPercent"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="25" Text="Атака">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="25" Visibility="Hidden" Foreground="Red" Text="Не целое число" Name="enemys3AttackPercentIsNotNumber">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="25" Visibility="Hidden" Foreground="Red" Text="Меньше 1" Name="enemys3AttackPercentLessOne">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="25" Visibility="Hidden" Foreground="Red" Text="Больше 100" Name="enemys3AttackPercentMoreOneHundred">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <!--CriticalAttackPercent-->
+        <TextBox Margin="1,0,1,0" VerticalAlignment="Center" Grid.Row="6" Grid.Column="26" Name="enemys3CriticalAttackPercent"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="26" Text="Крит">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="26" Visibility="Hidden" Foreground="Red" Text="Не целое число" Name="enemys3CriticalAttackPercentIsNotNumber">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="26" Visibility="Hidden" Foreground="Red" Text="Меньше 1" Name="enemys3CriticalAttackPercentLessOne">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="26" Visibility="Hidden" Foreground="Red" Text="Больше 100" Name="enemys3CriticalAttackPercentMoreOneHundred">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <!--DodgePercen-->
+        <TextBox Margin="1,0,1,0" VerticalAlignment="Center" Grid.Row="6" Grid.Column="27" Name="enemys3DodgePercent"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="27" Text="Уворот">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="27" Visibility="Hidden" Foreground="Red" Text="Не целое число" Name="enemys3DodgePercentIsNotNumber">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="27" Visibility="Hidden" Foreground="Red" Text="Меньше 0" Name="enemys3DodgePercentLessZero">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="27" Visibility="Hidden" Foreground="Red" Text="Больше 99" Name="enemys3DodgePercentMoreNinetyNine">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+
+        <!--Enemy 4-->
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="2" Grid.Column="30" Text="Атака">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="3" Grid.Column="30" Text="Жизнь">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="4" Grid.Column="30" Text="Крит">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="6" Grid.Column="30" Text="%"/>
+        
+        <Rectangle Fill="Red" Width="auto" Grid.Row="0" Grid.Column="31" Grid.ColumnSpan="5"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="1" Grid.Column="31" Grid.ColumnSpan="5">Враг 4</TextBlock>
+        <TextBox Margin="10,0,10,0" VerticalAlignment="Center" Grid.Row="2" Grid.Column="31" Grid.ColumnSpan="5" Name="enemys4Attack"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="2" Grid.Column="31" Grid.ColumnSpan="5" Name="enemys4AttackIsNotNumber" Foreground="Red" Visibility="Hidden">Не целое число</TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="2" Grid.Column="31" Grid.ColumnSpan="5" Name="enemys4AttackLessZero" Foreground="Red" Visibility="Hidden">Меньше 0</TextBlock>
+        <TextBox Margin="10,0,10,0" VerticalAlignment="Center" Grid.Row="3" Grid.Column="31" Grid.ColumnSpan="5" Name="enemys4Life"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="3" Grid.Column="31" Grid.ColumnSpan="5" Name="enemys4LifeIsNotNumber" Foreground="Red" Visibility="Hidden">Не целое число</TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="3" Grid.Column="31" Grid.ColumnSpan="5" Name="enemys4LifeLessZero" Foreground="Red" Visibility="Hidden">Меньше 0</TextBlock>
+        <TextBox Margin="10,0,10,0" VerticalAlignment="Center" Grid.Row="4" Grid.Column="31" Grid.ColumnSpan="5" Name="enemys4CriticalAttack"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="4" Grid.Column="31" Grid.ColumnSpan="5" Name="enemys4CriticalAttackIsNotNumber" Foreground="Red" Visibility="Hidden">Не целое число</TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="4" Grid.Column="31" Grid.ColumnSpan="5" Name="enemys4CriticalAttackLessZero" Foreground="Red" Visibility="Hidden">Меньше 0</TextBlock>
+
+        <!--AttackPercent-->
+        <TextBox Margin="1,0,1,0" VerticalAlignment="Center" Grid.Row="6" Grid.Column="32" Name="enemys4AttackPercent"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="32" Text="Атака">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="32" Visibility="Hidden" Foreground="Red" Text="Не целое число" Name="enemys4AttackPercentIsNotNumber">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="32" Visibility="Hidden" Foreground="Red" Text="Меньше 1" Name="enemys4AttackPercentLessOne">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="32" Visibility="Hidden" Foreground="Red" Text="Больше 100" Name="enemys4AttackPercentMoreOneHundred">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <!--CriticalAttackPercent-->
+        <TextBox Margin="1,0,1,0" VerticalAlignment="Center" Grid.Row="6" Grid.Column="33" Name="enemys4CriticalAttackPercent"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="33" Text="Крит">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="33" Visibility="Hidden" Foreground="Red" Text="Не целое число" Name="enemys4CriticalAttackPercentIsNotNumber">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="33" Visibility="Hidden" Foreground="Red" Text="Меньше 1" Name="enemys4CriticalAttackPercentLessOne">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="33" Visibility="Hidden" Foreground="Red" Text="Больше 100" Name="enemys4CriticalAttackPercentMoreOneHundred">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <!--DodgePercen-->
+        <TextBox Margin="1,0,1,0" VerticalAlignment="Center" Grid.Row="6" Grid.Column="34" Name="enemys4DodgePercent"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="34" Text="Уворот">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="34" Visibility="Hidden" Foreground="Red" Text="Не целое число" Name="enemys4DodgePercentIsNotNumber">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="34" Visibility="Hidden" Foreground="Red" Text="Меньше 0" Name="enemys4DodgePercentLessZero">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="34" Visibility="Hidden" Foreground="Red" Text="Больше 99" Name="enemys4DodgePercentMoreNinetyNine">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <!--Enemy 5-->
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="2" Grid.Column="37" Text="Атака">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="3" Grid.Column="37" Text="Жизнь">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="4" Grid.Column="37" Text="Крит">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="6" Grid.Column="37" Text="%"/>
+        
+        <Rectangle Fill="Red" Width="auto" Grid.Row="0" Grid.Column="38" Grid.ColumnSpan="5"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="1" Grid.Column="38" Grid.ColumnSpan="5">Враг 5</TextBlock>
+        <TextBox Margin="10,0,10,0" VerticalAlignment="Center" Grid.Row="2" Grid.Column="38" Grid.ColumnSpan="5" Name="enemys5Attack"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="2" Grid.Column="38" Grid.ColumnSpan="5" Name="enemys5AttackIsNotNumber" Foreground="Red" Visibility="Hidden">Не целое число</TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="2" Grid.Column="38" Grid.ColumnSpan="5" Name="enemys5AttackLessZero" Foreground="Red" Visibility="Hidden">Меньше 0</TextBlock>
+        <TextBox Margin="10,0,10,0" VerticalAlignment="Center" Grid.Row="3" Grid.Column="38" Grid.ColumnSpan="5" Name="enemys5Life"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="3" Grid.Column="38" Grid.ColumnSpan="5" Name="enemys5LifeIsNotNumber" Foreground="Red" Visibility="Hidden">Не целое число</TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="3" Grid.Column="38" Grid.ColumnSpan="5" Name="enemys5LifeLessZero" Foreground="Red" Visibility="Hidden">Меньше 0</TextBlock>
+        <TextBox Margin="10,0,10,0" VerticalAlignment="Center" Grid.Row="4" Grid.Column="38" Grid.ColumnSpan="5" Name="enemys5CriticalAttack"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="4" Grid.Column="38" Grid.ColumnSpan="5" Name="enemys5CriticalAttackIsNotNumber" Foreground="Red" Visibility="Hidden">Не целое число</TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Bottom" Width="auto" Grid.Row="4" Grid.Column="38" Grid.ColumnSpan="5" Name="enemys5CriticalAttackLessZero" Foreground="Red" Visibility="Hidden">Меньше 0</TextBlock>
+
+        <!--AttackPercent-->
+        <TextBox Margin="1,0,1,0" VerticalAlignment="Center" Grid.Row="6" Grid.Column="39" Name="enemys5AttackPercent"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="39" Text="Атака">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="39" Visibility="Hidden" Foreground="Red" Text="Не целое число" Name="enemys5AttackPercentIsNotNumber">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="39" Visibility="Hidden" Foreground="Red" Text="Меньше 1" Name="enemys5AttackPercentLessOne">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="39" Visibility="Hidden" Foreground="Red" Text="Больше 100" Name="enemys5AttackPercentMoreOneHundred">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <!--CriticalAttackPercent-->
+        <TextBox Margin="1,0,1,0" VerticalAlignment="Center" Grid.Row="6" Grid.Column="40" Name="enemys5CriticalAttackPercent"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="40" Text="Крит">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="40" Visibility="Hidden" Foreground="Red" Text="Не целое число" Name="enemys5CriticalAttackPercentIsNotNumber">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="40" Visibility="Hidden" Foreground="Red" Text="Меньше 1" Name="enemys5CriticalAttackPercentLessOne">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="40" Visibility="Hidden" Foreground="Red" Text="Больше 100" Name="enemys5CriticalAttackPercentMoreOneHundred">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <!--DodgePercen-->
+        <TextBox Margin="1,0,1,0" VerticalAlignment="Center" Grid.Row="6" Grid.Column="41" Name="enemys5DodgePercent"/>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="41" Text="Уворот">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="41" Visibility="Hidden" Foreground="Red" Text="Не целое число" Name="enemys5DodgePercentIsNotNumber">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="41" Visibility="Hidden" Foreground="Red" Text="Меньше 0" Name="enemys5DodgePercentLessZero">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <TextBlock HorizontalAlignment="Right" VerticalAlignment="Center" Width="auto" Grid.Row="7" Grid.Column="41" Visibility="Hidden" Foreground="Red" Text="Больше 99" Name="enemys5DodgePercentMoreNinetyNine">
+            <TextBlock.LayoutTransform>
+                <RotateTransform Angle="270"></RotateTransform>
+            </TextBlock.LayoutTransform>
+        </TextBlock>
+
+        <!--Hero-->
+        <Rectangle Width="auto" Grid.Row="8" Grid.Column="0" Grid.RowSpan="5" Grid.ColumnSpan="6" Stroke="Lime" StrokeThickness="5"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="5" Text="Количество побед: -" Name="countHerosWin"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="5" Text="Внёс урона: -" Name="herosDamage"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="5" Text="Первым атакавал: -" Name="countHeroesFirstAttack"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="5" Text="Общее количество атак: -" Name="countAllHerosAttack"/>
+        
+        <Rectangle Width="auto" Grid.Row="14" Grid.Column="0" Grid.RowSpan="4" Grid.ColumnSpan="6" Stroke="Blue" StrokeThickness="5"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="14" Grid.Column="1" Grid.ColumnSpan="5" Text="Количество атак: -" Name="countHerosAttack"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="15" Grid.Column="1" Grid.ColumnSpan="5" Text="Количество критических атак: -" Name="countHerosCriticalAttack"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="16" Grid.Column="1" Grid.ColumnSpan="5" Text="Количество уворотов: -" Name="countHerosDodge"/>
+
+        <!--Enemy 1-->
+        <Rectangle Width="auto" Grid.Row="9" Grid.Column="9" Grid.RowSpan="4" Grid.ColumnSpan="6" Stroke="BlueViolet" StrokeThickness="5"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="9" Grid.Column="10" Grid.ColumnSpan="5" Text="Внёс урона: -" Name="enemys1Damage"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="10" Grid.Column="10" Grid.ColumnSpan="5" Text="Первым атаковал: -" Name="countEnemys1FirstAttack"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="11" Grid.Column="10" Grid.ColumnSpan="5" Text="Общее количество атак: -" Name="countAllEnemys1Attack"/>
+        
+        <Rectangle Width="auto" Grid.Row="14" Grid.Column="9" Grid.RowSpan="4" Grid.ColumnSpan="6" Stroke="Red" StrokeThickness="5"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="14" Grid.Column="10" Grid.ColumnSpan="5" Text="Количество атак: -" Name="countEnemys1Attack"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="15" Grid.Column="10" Grid.ColumnSpan="5" Text="Количество критических атак: -" Name="countEnemys1CriticalAttack"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="16" Grid.Column="10" Grid.ColumnSpan="5" Text="Количество уворотов: -" Name="countEnemys1Dodge"/>
+
+        <!--Enemy 2-->
+        <Rectangle Width="auto" Grid.Row="9" Grid.Column="16" Grid.RowSpan="4" Grid.ColumnSpan="6" Stroke="BlueViolet" StrokeThickness="5"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="9" Grid.Column="17" Grid.ColumnSpan="5" Text="Внёс урона: -" Name="enemys2Damage"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="10" Grid.Column="17" Grid.ColumnSpan="5" Text="Первым атаковал: -" Name="countEnemys2FirstAttack"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="11" Grid.Column="17" Grid.ColumnSpan="5" Text="Общее количество атак: -" Name="countAllEnemys2Attack"/>
+        
+        <Rectangle Width="auto" Grid.Row="14" Grid.Column="16" Grid.RowSpan="4" Grid.ColumnSpan="6" Stroke="Red" StrokeThickness="5"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="14" Grid.Column="17" Grid.ColumnSpan="5" Text="Количество атак: -" Name="countEnemys2Attack"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="15" Grid.Column="17" Grid.ColumnSpan="5" Text="Количество критических атак: -" Name="countEnemys2CriticalAttack"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="16" Grid.Column="17" Grid.ColumnSpan="5" Text="Количество уворотов: -" Name="countEnemys2Dodge"/>
+
+        <!--Enemy 3-->
+        <Rectangle Width="auto" Grid.Row="9" Grid.Column="23" Grid.RowSpan="4" Grid.ColumnSpan="6" Stroke="BlueViolet" StrokeThickness="5"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="9" Grid.Column="24" Grid.ColumnSpan="5" Text="Внёс урона: -" Name="enemys3Damage"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="10" Grid.Column="24" Grid.ColumnSpan="5" Text="Первым атаковал: -" Name="countEnemys3FirstAttack"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="11" Grid.Column="24" Grid.ColumnSpan="5" Text="Общее количество атак: -" Name="countAllEnemys3Attack"/>
+        
+        <Rectangle Width="auto" Grid.Row="14" Grid.Column="23" Grid.RowSpan="4" Grid.ColumnSpan="6" Stroke="Red" StrokeThickness="5"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="14" Grid.Column="24" Grid.ColumnSpan="5" Text="Количество атак: -" Name="countEnemys3Attack"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="15" Grid.Column="24" Grid.ColumnSpan="5" Text="Количество критических атак: -" Name="countEnemys3CriticalAttack"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="16" Grid.Column="24" Grid.ColumnSpan="5" Text="Количество уворотов: -" Name="countEnemys3Dodge"/>
+
+        <!--Enemy 4-->
+        <Rectangle Width="auto" Grid.Row="9" Grid.Column="30" Grid.RowSpan="4" Grid.ColumnSpan="6" Stroke="BlueViolet" StrokeThickness="5"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="9" Grid.Column="31" Grid.ColumnSpan="5" Text="Внёс урона: -" Name="enemys4Damage"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="10" Grid.Column="31" Grid.ColumnSpan="5" Text="Первым атаковал: -" Name="countEnemys4FirstAttack"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="11" Grid.Column="31" Grid.ColumnSpan="5" Text="Общее количество атак: -" Name="countAllEnemys4Attack"/>
+        
+        <Rectangle Width="auto" Grid.Row="14" Grid.Column="30" Grid.RowSpan="4" Grid.ColumnSpan="6" Stroke="Red" StrokeThickness="5"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="14" Grid.Column="31" Grid.ColumnSpan="5" Text="Количество атак: -" Name="countEnemys4Attack"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="15" Grid.Column="31" Grid.ColumnSpan="5" Text="Количество критических атак: -" Name="countEnemys4CriticalAttack"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="16" Grid.Column="31" Grid.ColumnSpan="5" Text="Количество уворотов: -" Name="countEnemys4Dodge"/>
+
+        <!--Enemy 5-->
+        <Rectangle Width="auto" Grid.Row="9" Grid.Column="37" Grid.RowSpan="4" Grid.ColumnSpan="6" Stroke="BlueViolet" StrokeThickness="5"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="9" Grid.Column="38" Grid.ColumnSpan="5" Text="Внёс урона: -" Name="enemys5Damage"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="10" Grid.Column="38" Grid.ColumnSpan="5" Text="Первым атаковал: -" Name="countEnemys5FirstAttack"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="11" Grid.Column="38" Grid.ColumnSpan="5" Text="Общее количество атак: -" Name="countAllEnemys5Attack"/>
+        
+        <Rectangle Width="auto" Grid.Row="14" Grid.Column="37" Grid.RowSpan="4" Grid.ColumnSpan="6" Stroke="Red" StrokeThickness="5"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="14" Grid.Column="38" Grid.ColumnSpan="5" Text="Количество атак: -" Name="countEnemys5Attack"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="15" Grid.Column="38" Grid.ColumnSpan="5" Text="Количество критических атак: -" Name="countEnemys5CriticalAttack"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="auto" Grid.Row="16" Grid.Column="38" Grid.ColumnSpan="5" Text="Количество уворотов: -" Name="countEnemys5Dodge"/>
+    </Grid>
+</Window>

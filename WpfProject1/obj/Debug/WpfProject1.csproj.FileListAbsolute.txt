@@ -1,0 +1,14 @@
+c:\users\al\documents\visual studio 2017\Projects\WpfProject1\WpfProject1\bin\Debug\WpfProject1.exe.config
+c:\users\al\documents\visual studio 2017\Projects\WpfProject1\WpfProject1\bin\Debug\WpfProject1.exe
+c:\users\al\documents\visual studio 2017\Projects\WpfProject1\WpfProject1\bin\Debug\WpfProject1.pdb
+c:\users\al\documents\visual studio 2017\Projects\WpfProject1\WpfProject1\obj\Debug\WpfProject1.csprojResolveAssemblyReference.cache
+c:\users\al\documents\visual studio 2017\Projects\WpfProject1\WpfProject1\obj\Debug\MainWindow.g.cs
+c:\users\al\documents\visual studio 2017\Projects\WpfProject1\WpfProject1\obj\Debug\App.g.cs
+c:\users\al\documents\visual studio 2017\Projects\WpfProject1\WpfProject1\obj\Debug\WpfProject1_MarkupCompile.cache
+c:\users\al\documents\visual studio 2017\Projects\WpfProject1\WpfProject1\obj\Debug\WpfProject1_MarkupCompile.lref
+c:\users\al\documents\visual studio 2017\Projects\WpfProject1\WpfProject1\obj\Debug\MainWindow.baml
+c:\users\al\documents\visual studio 2017\Projects\WpfProject1\WpfProject1\obj\Debug\WpfProject1.g.resources
+c:\users\al\documents\visual studio 2017\Projects\WpfProject1\WpfProject1\obj\Debug\WpfProject1.Properties.Resources.resources
+c:\users\al\documents\visual studio 2017\Projects\WpfProject1\WpfProject1\obj\Debug\WpfProject1.csproj.GenerateResource.Cache
+c:\users\al\documents\visual studio 2017\Projects\WpfProject1\WpfProject1\obj\Debug\WpfProject1.exe
+c:\users\al\documents\visual studio 2017\Projects\WpfProject1\WpfProject1\obj\Debug\WpfProject1.pdb
